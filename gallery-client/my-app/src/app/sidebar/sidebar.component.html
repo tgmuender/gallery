@@ -1,0 +1,17 @@
+<div class="sidebar">
+  <ul class="preview-images">
+    <li
+      *ngFor="let previewImage of previewImages"
+      (click)="onSelect(previewImage)"
+      [class.selected]="previewImage === previewImage"
+    >
+
+      <img src="http://localhost:8000/thumbs/thumb_{{ previewImage.name }}">
+    </li>
+  </ul>
+
+</div>
+
+<div class="detail">
+  <app-image-detail [image]="previewImage"></app-image-detail>
+</div>

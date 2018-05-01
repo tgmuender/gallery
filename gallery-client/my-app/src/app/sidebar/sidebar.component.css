@@ -1,0 +1,45 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  max-width: 280px;
+}
+
+.detail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20%;
+}
+
+.selected {
+  border: 1px dotted blue;
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.preview-images {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.preview-images li {
+  cursor: pointer;
+  position: relative;
+  margin: .5em 0;
+  padding: 0.25em 0;
+  border: 1px solid black;
+}
+
+.preview-images li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+  border: 1px solid antiquewhite;
+}
+.preview-images li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+}
