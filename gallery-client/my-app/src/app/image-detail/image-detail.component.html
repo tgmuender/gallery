@@ -1,13 +1,15 @@
 <div *ngIf="image">
-  <h2>{{ image.name }}</h2>
+  <h3>{{ image.name }}</h3>
 
-  <div>
-    <span>Name: </span>
+  <div *ngIf="details">
+    <span>Timestamp: {{ details['DateTime'] }} </span>
+    <span>Camera: {{ details['Make'] }} </span>
+    <span>Model: {{ details['Model'] }} </span>
   </div>
 
   <div class="img">
-    <a href="http://localhost:8000/{{ image.name }}" target="_blank">
-      <img src="http://localhost:8000/{{ image.name }}">
+    <a href="{{ image.name }}" target="_blank">
+      <img src="{{ image.name }}">
     </a>
   </div>
 </div>

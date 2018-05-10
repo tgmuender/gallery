@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PreviewImage} from "../PreviewImage";
-import { PREVIEW_IMAGES} from "../mock-preview-images";
-
+import { ImageListService} from "../image-list.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +9,7 @@ import { PREVIEW_IMAGES} from "../mock-preview-images";
 })
 export class SidebarComponent implements OnInit {
 
-  previewImages = PREVIEW_IMAGES;
+  previewImages: PreviewImage[];
 
   previewImage: PreviewImage;
 
@@ -18,9 +17,15 @@ export class SidebarComponent implements OnInit {
     this.previewImage = previewImage;
   }
 
-  constructor() { }
+  getPreviewImages(): void {
+    this.imageListService.getImages()
+      .subscribe(images => this.previewImages = images);
+  }
+
+  constructor(private imageListService: ImageListService) { }
 
   ngOnInit() {
+    this.getPreviewImages();
   }
 
 }
